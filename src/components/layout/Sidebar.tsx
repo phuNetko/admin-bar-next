@@ -23,8 +23,8 @@ const sidebars = [
         
     },
     {
-        label: 'products',
-        path: 'products',
+        label: 'bars',
+        path: 'bars',
         icon: SchoolIcon ,
     },
     {
@@ -54,10 +54,10 @@ const Sidebar = () => {
                   </Link>
                 </div>
               </header>
-              <nav className="flex-1 py-6 overflow-x-hidden overflow-y-auto bg-[#2E3A59] filament-sidebar-nav">
-                <ul className="px-[30px] space-y-6">
+              <nav className="flex-1 py-6 px-3 overflow-x-hidden overflow-y-auto bg-[#2E3A59] filament-sidebar-nav">
+                <ul className="">
                   <li className="filament-sidebar-group">
-                    <ul className="text-sm space-y-1 -mx-3">
+                    <ul className="text-sm space-y-1">
                       {sidebars.map((item, index) => (
                         <SideBarItems key={index} index={index} icon={item.icon} link={item.path} title={item.label} />
                       ))}
