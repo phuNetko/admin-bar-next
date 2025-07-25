@@ -18,5 +18,9 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next|favicon.ico|api).*)'],
+  matcher: [
+    // chỉ áp dụng với những route không phải asset tĩnh
+    '/((?!_next|favicon.ico|.*\\.(?:png|jpg|jpeg|svg|webp|css|js|ico)).*)',
+  ],
 };
+
