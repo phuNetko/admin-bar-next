@@ -1,7 +1,11 @@
-"use client"
-import { I18nextProvider } from 'react-i18next';
-import i18n from '@/lib/i18n/i18n';
 import "./globals.css";
+import I18nProviderWrapper from "@/components/i18nProviderWrapper";
+export const metadata = {
+  title: "Tên mặc định của tab",
+  icons: {
+    icon: "/Earth.svg",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -14,7 +18,7 @@ export default function RootLayout({
         className={`h-screen w-screen antialiased`}
 
       >
-        <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
+        <I18nProviderWrapper>{children}</I18nProviderWrapper>
       </body>
     </html>
   );
