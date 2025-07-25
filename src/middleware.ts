@@ -1,22 +1,22 @@
-// middleware.ts
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+const locales = ['en', 'vi'];
+const defaultLocale = 'en';
 
 export function middleware(request: NextRequest) {
-  const token = request.cookies.get("token")?.value;
+  const { pathname } = request.nextUrl;
 
-  const isLoggedIn = !!token;
+  const hasLocale = locales.some((locale) => pathname.startsWith(`/${locale}`));
 
-  const isDashboard = request.nextUrl.pathname.startsWith("/dashboard");
-
-  if (isDashboard && !isLoggedIn) {
-    return NextResponse.redirect(new URL("/login", request.url));
+  if (!hasLocale) {
+    const locale = request.cookies.get('NEXT_LOCALE')?.value || defaultLocale;
+    return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
   }
 
   return NextResponse.next();
 }
 
-// Cấu hình matcher để áp dụng middleware cho các đường dẫn nhất định
 export const config = {
-  matcher: ["/dashboard/:path*"],
+  matcher: ['/((?!_next|favicon.ico|api).*)'],
 };

@@ -17,18 +17,18 @@ interface ISideBarItems {
 const sidebars = [
     {
         label: 'dashboard',
-        path: '/dashboard',
+        path: 'dashboard',
         icon: Home ,
         
     },
     {
         label: 'products',
-        path: '/products',
+        path: 'products',
         icon: SchoolIcon ,
     },
     {
         label: 'settings',
-        path: '/settings',
+        path: 'settings',
         icon: Setting ,
     }
 ]
@@ -75,7 +75,7 @@ const Sidebar = () => {
     // const dispatch = useDispatch();
     const router = useRouter();
     const path = usePathname();
-    const isActive = path === link;
+    const isActive = path.includes(link||"");
     const [isHover, setIsHover] = useState(false);
     const color = isActive || isHover ? '#fff' : '#000';
     // const isShowSideBar = useSelector((state: IRootState) => state.theme.isShowSideBar);
