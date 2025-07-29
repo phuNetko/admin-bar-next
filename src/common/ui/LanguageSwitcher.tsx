@@ -13,12 +13,13 @@ export default function ChangeLanguage({locale}: {locale: string}) {
   const [localeCu, setLocaleCu] = useState(locale || 'en');
 
   useEffect(() => {
-    const storedLocale = localStorage.getItem('locale')||locale;
+    const storedLocale = locale || localStorage.getItem('locale');
     if (storedLocale && supportedLocales.includes(storedLocale)) {
       i18next.changeLanguage(storedLocale);
       setLocaleCu(storedLocale);
+      localStorage.setItem('locale', storedLocale);
     }
-  }, []);
+  }, [locale]);
 
   const handleChange = (event: SelectChangeEvent) => {
     const newLocale = event.target.value;

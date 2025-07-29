@@ -1,7 +1,8 @@
-import Sidebar from "@/components/layout/Sidebar";
-import Header from "@/components/layout/Header";
+import Sidebar from "@/common/layout/Sidebar";
+import Header from "@/common/layout/Header";
 const DashboardLayout = async ({ children, params }: { children: React.ReactNode, params: {locale: string} | Promise<{locale: string}> }) => {
   const {locale} = await params;
+  console.log(locale);
   return (
     <div className="flex-1 h-screen w-screen">
       <div className="flex h-full w-full">

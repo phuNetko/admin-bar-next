@@ -1,4 +1,4 @@
-import LoginForm from "@/components/Form/LoginForm";
+import LoginForm from "@/common/form/LoginForm";
 
 const LoginPage = async ({params}: {params: {locale: string} | Promise<{locale: string}>}) => {
   const {locale} = await params;

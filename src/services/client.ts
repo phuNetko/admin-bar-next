@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CheckToken } from '@/components/ultils/checkToken';
+import { CheckToken } from '@/ultils/checkToken';
 
 const client = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_URL,

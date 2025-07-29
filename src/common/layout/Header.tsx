@@ -1,6 +1,6 @@
 "use client"
 import { useRouter } from "next/navigation";
-import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+import LanguageSwitcher from "@/common/ui/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
   
 const Header = ({locale}: {locale: string}) => {

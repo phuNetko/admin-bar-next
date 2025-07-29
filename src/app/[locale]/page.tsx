@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { CheckToken } from "@/components/ultils/checkToken";
+import { CheckToken } from "@/ultils/checkToken";
 const Home = async ({params}: {params: {locale: string} | Promise<{locale: string}>}) => {
   const {locale} = await params;
   const token = await CheckToken();

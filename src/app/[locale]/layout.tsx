@@ -1,5 +1,5 @@
 import "./globals.css";
-import I18nProviderWrapper from "@/components/i18nProviderWrapper";
+import I18nProviderWrapper from "@/common/i18nProviderWrapper";
 export const metadata = {
   title: "Tên mặc định của tab",
   icons: {
